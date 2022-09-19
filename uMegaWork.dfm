@@ -1,0 +1,544 @@
+object fMegaWork: TfMegaWork
+  Left = 114
+  Top = 40
+  BorderStyle = bsDialog
+  Caption = 'fMegaWork'
+  ClientHeight = 488
+  ClientWidth = 669
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Splitter1: TSplitter
+    Left = 321
+    Top = 42
+    Width = 4
+    Height = 446
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 669
+    Height = 42
+    AutoSize = True
+    ButtonHeight = 38
+    ButtonWidth = 39
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    Flat = True
+    HotImages = fDm.HotImages
+    Images = fDm.Images
+    TabOrder = 0
+    object btnClose: TToolButton
+      Left = 0
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1047#1072#1082#1088#1099#1090#1100' '#1086#1082#1085#1086' (ESCAPE)'
+      Caption = 'btnClose'
+      ImageIndex = 11
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnCloseClick
+    end
+    object ToolButton2: TToolButton
+      Left = 39
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton2'
+      ImageIndex = 12
+      Style = tbsSeparator
+    end
+    object btnInsert: TToolButton
+      Left = 47
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1044#1086#1073#1072#1074#1080#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'" (INSERT)'
+      Caption = 'btnInsert'
+      ImageIndex = 8
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnInsertClick
+    end
+    object btnEdit: TToolButton
+      Left = 86
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'" (ENTER)'
+      Caption = 'btnEdit'
+      ImageIndex = 9
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnEditClick
+    end
+    object btnDelete: TToolButton
+      Left = 125
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1059#1076#1072#1083#1080#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'" (DEL)'
+      Caption = 'btnDelete'
+      ImageIndex = 10
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnDeleteClick
+    end
+    object ToolButton1: TToolButton
+      Left = 164
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton1'
+      ImageIndex = 11
+      Style = tbsSeparator
+    end
+    object btnLetter: TToolButton
+      Left = 172
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1055#1077#1095#1072#1090#1100' '#1087#1080#1089#1100#1084#1072' (F2)'
+      Caption = 'btnLetter'
+      ImageIndex = 17
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnLetterClick
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 42
+    Width = 321
+    Height = 446
+    Align = alLeft
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object grMega: TDBGrid
+      Left = 2
+      Top = 33
+      Width = 317
+      Height = 231
+      Align = alTop
+      DataSource = dsMega
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+      PopupMenu = PopupMenu
+      ReadOnly = True
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+      OnDblClick = btnEditClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'MW_Name'
+          Title.Alignment = taCenter
+          Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clNavy
+          Title.Font.Height = -11
+          Title.Font.Name = 'MS Sans Serif'
+          Title.Font.Style = [fsBold]
+          Width = 280
+          Visible = True
+        end>
+    end
+    object grVipusks: TDBGrid
+      Left = 2
+      Top = 296
+      Width = 317
+      Height = 148
+      Hint = #1053#1072#1078#1084#1080' '#1055#1056#1054#1041#1045#1051' '#1076#1083#1103' '#1091#1076#1072#1083#1077#1085#1080#1103' '#1074#1099#1087#1091#1089#1082#1072' '#1080#1079' '#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1103
+      Align = alClient
+      DataSource = dsVipusks
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+      OnDblClick = grVipusksDblClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'W_Otbor'
+          Title.Alignment = taCenter
+          Title.Caption = #1052#1077#1089#1090#1086' '#1086#1090#1073#1086#1088#1072
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clNavy
+          Title.Font.Height = -11
+          Title.Font.Name = 'MS Sans Serif'
+          Title.Font.Style = [fsBold]
+          Width = 160
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'W_ShortName'
+          Title.Alignment = taCenter
+          Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clNavy
+          Title.Font.Height = -11
+          Title.Font.Name = 'MS Sans Serif'
+          Title.Font.Style = [fsBold]
+          Width = 119
+          Visible = True
+        end>
+    end
+    object Panel3: TPanel
+      Left = 2
+      Top = 264
+      Width = 317
+      Height = 32
+      Align = alTop
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      TabOrder = 2
+      object DBEdit1: TDBEdit
+        Left = 10
+        Top = 6
+        Width = 297
+        Height = 21
+        DataField = 'MW_Address'
+        DataSource = dsMega
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object Panel5: TPanel
+      Left = 2
+      Top = 2
+      Width = 317
+      Height = 31
+      Align = alTop
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      TabOrder = 3
+      object eSrchMega: TEdit
+        Left = 10
+        Top = 5
+        Width = 297
+        Height = 21
+        Hint = #1042#1074#1077#1076#1080#1090#1077' '#1089#1090#1088#1086#1082#1091' '#1092#1080#1083#1100#1090#1088#1072
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        OnChange = eSrchMegaChange
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 325
+    Top = 42
+    Width = 344
+    Height = 446
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object grWorks: TDBGrid
+      Left = 2
+      Top = 33
+      Width = 340
+      Height = 263
+      Hint = #1053#1072#1078#1084#1080' '#1055#1056#1054#1041#1045#1051' '#1076#1083#1103' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1103' '#1074#1099#1087#1091#1089#1082#1072' '#1082' '#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1102
+      Align = alTop
+      DataSource = dsWorks
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+      OnDblClick = grWorksDblClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'W_ShortName'
+          Title.Alignment = taCenter
+          Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clNavy
+          Title.Font.Height = -11
+          Title.Font.Name = 'MS Sans Serif'
+          Title.Font.Style = [fsBold]
+          Visible = True
+        end>
+    end
+    object Panel4: TPanel
+      Left = 2
+      Top = 296
+      Width = 340
+      Height = 148
+      Align = alClient
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      TabOrder = 1
+      object DBEdit2: TDBEdit
+        Left = 8
+        Top = 16
+        Width = 321
+        Height = 21
+        DataField = 'W_FullName'
+        DataSource = dsWorks
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit3: TDBEdit
+        Left = 8
+        Top = 48
+        Width = 321
+        Height = 21
+        DataField = 'W_Otbor'
+        DataSource = dsWorks
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object eAddress: TDBEdit
+        Left = 8
+        Top = 80
+        Width = 321
+        Height = 21
+        DataField = 'W_Address'
+        DataSource = dsWorks
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object eFilial: TDBEdit
+        Left = 8
+        Top = 112
+        Width = 321
+        Height = 21
+        Hint = #1042#1074#1077#1076#1080#1090#1077' '#1085#1072#1079#1074#1072#1085#1080#1077' '#1092#1080#1083#1080#1072#1083#1072
+        DataField = 'W_Filial'
+        DataSource = dsWorks
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+      end
+    end
+    object Panel6: TPanel
+      Left = 2
+      Top = 2
+      Width = 340
+      Height = 31
+      Hint = #1042#1074#1077#1076#1080#1090#1077' '#1095#1090#1088#1086#1082#1091' '#1092#1080#1083#1100#1090#1088#1072
+      Align = alTop
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      object eSrchWorks: TEdit
+        Left = 9
+        Top = 5
+        Width = 321
+        Height = 21
+        Hint = #1042#1074#1077#1076#1080#1090#1077' '#1089#1090#1088#1086#1082#1091' '#1092#1080#1083#1100#1090#1088#1072
+        TabOrder = 0
+        OnChange = eSrchWorksChange
+      end
+    end
+  end
+  object tMega: TTable
+    Active = True
+    DatabaseName = 'Labor_WIN32'
+    OnFilterRecord = tMegaFilterRecord
+    IndexFieldNames = 'MW_Name'
+    TableName = 'MegaWorks.db'
+    Left = 40
+    Top = 112
+    object tMegaMW_Code: TAutoIncField
+      FieldName = 'MW_Code'
+      ReadOnly = True
+    end
+    object tMegaMW_Name: TStringField
+      FieldName = 'MW_Name'
+      Size = 100
+    end
+    object tMegaMW_Address: TStringField
+      FieldName = 'MW_Address'
+      Size = 100
+    end
+  end
+  object tWorks: TTable
+    Active = True
+    DatabaseName = 'Labor_WIN32'
+    OnFilterRecord = tWorksFilterRecord
+    IndexFieldNames = 'W_ShortName'
+    TableName = 'Works.DB'
+    Left = 408
+    Top = 120
+    object tWorksW_Code: TAutoIncField
+      FieldName = 'W_Code'
+      ReadOnly = True
+    end
+    object tWorksW_A_Code: TIntegerField
+      FieldName = 'W_A_Code'
+    end
+    object tWorksW_ShortName: TStringField
+      FieldName = 'W_ShortName'
+      Size = 50
+    end
+    object tWorksW_Otbor: TStringField
+      FieldName = 'W_Otbor'
+      Size = 35
+    end
+    object tWorksW_Address: TStringField
+      FieldName = 'W_Address'
+      Size = 100
+    end
+    object tWorksW_FullName: TStringField
+      FieldName = 'W_FullName'
+      Size = 100
+    end
+    object tWorksW_Label: TBooleanField
+      FieldName = 'W_Label'
+    end
+    object tWorksW_Side: TIntegerField
+      FieldName = 'W_Side'
+    end
+    object tWorksW_K_Code: TIntegerField
+      FieldName = 'W_K_Code'
+    end
+    object tWorksW_OldCode: TFloatField
+      FieldName = 'W_OldCode'
+    end
+    object tWorksW_Filial: TStringField
+      FieldName = 'W_Filial'
+      Size = 100
+    end
+    object tWorksW_MW_Code: TIntegerField
+      FieldName = 'W_MW_Code'
+    end
+  end
+  object tVipusks: TTable
+    Active = True
+    DatabaseName = 'Labor_WIN32'
+    IndexName = 'I_W_MW_Code'
+    MasterFields = 'MW_Code'
+    MasterSource = dsMega
+    TableName = 'Works.DB'
+    Left = 64
+    Top = 344
+    object tVipusksW_Code: TAutoIncField
+      FieldName = 'W_Code'
+      ReadOnly = True
+    end
+    object tVipusksW_A_Code: TIntegerField
+      FieldName = 'W_A_Code'
+    end
+    object tVipusksW_ShortName: TStringField
+      FieldName = 'W_ShortName'
+      Size = 50
+    end
+    object tVipusksW_Otbor: TStringField
+      FieldName = 'W_Otbor'
+      Size = 35
+    end
+    object tVipusksW_Address: TStringField
+      FieldName = 'W_Address'
+      Size = 100
+    end
+    object tVipusksW_FullName: TStringField
+      FieldName = 'W_FullName'
+      Size = 100
+    end
+    object tVipusksW_Label: TBooleanField
+      FieldName = 'W_Label'
+    end
+    object tVipusksW_Side: TIntegerField
+      FieldName = 'W_Side'
+    end
+    object tVipusksW_K_Code: TIntegerField
+      FieldName = 'W_K_Code'
+    end
+    object tVipusksW_OldCode: TFloatField
+      FieldName = 'W_OldCode'
+    end
+    object tVipusksW_Filial: TStringField
+      FieldName = 'W_Filial'
+      Size = 100
+    end
+    object tVipusksW_MW_Code: TIntegerField
+      FieldName = 'W_MW_Code'
+    end
+  end
+  object dsMega: TDataSource
+    DataSet = tMega
+    Left = 72
+    Top = 112
+  end
+  object dsWorks: TDataSource
+    DataSet = tWorks
+    Left = 440
+    Top = 120
+  end
+  object dsVipusks: TDataSource
+    DataSet = tVipusks
+    Left = 96
+    Top = 344
+  end
+  object tMegaSearch: TTable
+    DatabaseName = 'Labor_WIN32'
+    IndexFieldNames = 'MW_Code'
+    TableName = 'MegaWorks.db'
+    Left = 168
+    Top = 184
+    object tMegaSearchMW_Code: TAutoIncField
+      FieldName = 'MW_Code'
+      ReadOnly = True
+    end
+    object tMegaSearchMW_Name: TStringField
+      FieldName = 'MW_Name'
+      Size = 100
+    end
+  end
+  object PopupMenu: TPopupMenu
+    Left = 88
+    Top = 176
+    object N1: TMenuItem
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'"'
+      OnClick = btnInsertClick
+    end
+    object N2: TMenuItem
+      Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'"'
+      OnClick = btnEditClick
+    end
+    object N3: TMenuItem
+      Caption = #1059#1076#1072#1083#1080#1090#1100' "'#1084#1077#1075#1072#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077'"'
+      OnClick = btnDeleteClick
+    end
+    object N4: TMenuItem
+      Caption = '-'
+    end
+    object N6: TMenuItem
+      Caption = #1055#1077#1095#1072#1090#1100' '#1087#1080#1089#1100#1084#1072
+      OnClick = btnLetterClick
+    end
+    object N7: TMenuItem
+      Caption = '-'
+    end
+    object N5: TMenuItem
+      Caption = #1047#1072#1082#1088#1099#1090#1100' '#1086#1082#1085#1086
+      OnClick = btnCloseClick
+    end
+  end
+end

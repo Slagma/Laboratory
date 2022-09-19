@@ -1,0 +1,65 @@
+unit uSootnoshenie;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBTables;
+
+type
+  TfSootnoshenie = class(TForm)
+    tActs: TTable;
+    tActsAC_Code: TAutoIncField;
+    tActsAC_Act: TFloatField;
+    tActsAC_Date: TDateField;
+    tActsAC_W_Code: TIntegerField;
+    tActsAC_Plan: TBooleanField;
+    tActsAC_Proba: TBooleanField;
+    tValues: TTable;
+    tValuesV_Code: TAutoIncField;
+    tValuesV_AC_Code: TIntegerField;
+    tValuesV_I_Code: TIntegerField;
+    tValuesV_Value: TFloatField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure DoWork;
+  end;
+
+var
+  fSootnoshenie: TfSootnoshenie;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfSootnoshenie.DoWork;
+var
+  HPK, BPK5 : Double;
+begin
+  tActs.First;
+  while not tActs.Eof do
+  begin
+    if tValues.FindKey([tActsAC_Code.Value, 177]) then  // ÕÏÊ
+    begin
+      HPK := tValuesV_Value.AsFloat;
+      if tValues.FindKey([tActsAC_Code.Value, 129]) then
+      begin
+        BPK5 := tValuesV_Value.AsFloat;
+        if BPK5 > 0.0 then
+        begin
+          if tValues.FindKey([tActsAC_Code.Value, 180]) then
+          begin
+            tValues.Edit;
+            tValuesV_Value.Value := HPK / BPK5;
+            tValues.Post;
+          end
+        end
+      end
+    end;
+    tActs.Next;
+  end;
+end;
+
+end.
